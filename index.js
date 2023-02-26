@@ -1,6 +1,7 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const config = require('./config')
+const cors = require('cors')
 
 //Controllers
 const logInUser = require('./contoller/login')
@@ -20,6 +21,7 @@ connect.then(dp => {
 // parse incoming requests
 app.use(express.json())
 app.use(express.urlencoded({extended : false}))
+app.use(cors())
 
 // set port
 let port = process.env.PORT

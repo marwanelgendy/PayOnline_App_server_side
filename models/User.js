@@ -9,10 +9,28 @@ const userSchema = new Schema({
         required : [true , "Please provide username"],
         unique : true
     },
+    firstname: {
+        type : String
+    },
+    secondname: {
+        type : String
+    },
     password : {
         type: String,
         required : [true , "please provide pasword"]
-    }
+    },
+    bills : [
+        {
+            type : mongoose.Schema.Types.ObjectId,
+            ref : 'bills'
+        }
+    ],
+    transfers:[
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref : 'transfers'
+        }
+    ]
 })
 
 userSchema.plugin(uniqueValidator)

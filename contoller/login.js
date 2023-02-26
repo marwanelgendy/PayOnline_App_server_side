@@ -5,19 +5,28 @@ module.exports = (req , res , next)=>{
 
     const {username , password} = req.body
 
-    User.find({username : username} , (err , user)=>{
+    User.findOne({username : username} , (err , user)=>{
         if(user){
             bcrypt.compare(password , user.password , (err , same)=>{
                 if(same){
-                    res.status(200).end()
+                    res.status(200).json({status : "Success"}).end()
+                    return
                 }
                 else{
-                    console.log(err)
+                    res.status(400).json({
+                        status : "Faild",
+                        message : "Incorrect Password"
+                    }).end()
+                    return
                 }
             })
         }
         else{
-            console.log(err)
+            res.status(400).json({
+                status : "Faild",
+                message : "User doesn't exist"
+            }).end()
+            return
         }
     })
 }
