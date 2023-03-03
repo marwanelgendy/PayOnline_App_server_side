@@ -6,6 +6,7 @@ const cors = require('cors')
 //Controllers
 const logInUser = require('./contoller/login')
 const registerUser = require('./contoller/register')
+const getUser = require('./contoller/getUser')
 
 //create app
 const app = express()
@@ -37,3 +38,6 @@ app.listen(port , ()=>{
 // Login & Register
 app.post('/login' , logInUser)
 app.post('/register' , registerUser)
+
+// Get Info
+app.get('/getUser/:userId' , getUser)

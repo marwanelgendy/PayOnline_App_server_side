@@ -9,7 +9,7 @@ module.exports = (req , res , next)=>{
         if(user){
             bcrypt.compare(password , user.password , (err , same)=>{
                 if(same){
-                    res.status(200).json({status : "Success"}).end()
+                    res.status(200).json({status : "Success" , user : user}).end()
                     return
                 }
                 else{
