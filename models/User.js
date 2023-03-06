@@ -45,6 +45,6 @@ userSchema.pre('save' , function(next){
 })
 
 
-const User = mongoose.model("PayApp_users" , userSchema);
+const User = mongoose.model("Payapp_users" , userSchema);
 
 module.exports = User

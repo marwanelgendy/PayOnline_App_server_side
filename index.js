@@ -7,6 +7,10 @@ const cors = require('cors')
 const logInUser = require('./contoller/login')
 const registerUser = require('./contoller/register')
 const getUser = require('./contoller/getUser')
+const addBill = require('./contoller/addBill')
+const getBill = require('./contoller/getBill')
+const addTransfer = require('./contoller/addTransfer')
+const getTransfer = require('./contoller/getTransfer')
 
 //create app
 const app = express()
@@ -41,3 +45,11 @@ app.post('/register' , registerUser)
 
 // Get Info
 app.get('/getUser/:userId' , getUser)
+
+// Bill
+app.post('/addBill' , addBill)
+app.get('/getBill/:billId' , getBill)
+
+// Transfer
+app.post('/addTransfer' , addTransfer)
+app.get('/getTransfer/:transferId' , getTransfer)

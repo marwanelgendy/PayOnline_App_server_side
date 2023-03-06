@@ -9,13 +9,14 @@ const transferSchema = new Schema({
         type: String
     },
     Amount: {
-        type: Number
-    },
-    reciever: {
         type: String
     },
+    reciever: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Payapp_users'
+    },
     date: {
-        type: Date
+        type: String
     }
 })
 

@@ -18,12 +18,13 @@ const billSchema = new Schema({
         type: String
     },
     issuedDate: {
-        type: Date
+        type: String
     },
     deadLineDate: {
-        type: Date
+        type: String
     }
 })
+
 
 const Bill = mongoose.model('bills' , billSchema)
 
