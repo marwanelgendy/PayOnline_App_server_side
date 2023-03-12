@@ -19,6 +19,10 @@ const userSchema = new Schema({
         type: String,
         required : [true , "please provide pasword"]
     },
+    balance: {
+        type: Number,
+        default : 0
+    },
     bills : [
         {
             type : mongoose.Schema.Types.ObjectId,
