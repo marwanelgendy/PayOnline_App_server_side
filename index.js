@@ -56,7 +56,7 @@ app.get('/getBill/:billId' , getBill)
 
 // Transfer
 app.post('/addTransfer' , addTransfer)
-app.get('/getTransfer/:transferId' , getTransfer)
+app.get('/getTransfers' , getTransfer)
 
 // Update User
 app.post('/updateUser/:userId' , addBillOrTransferToUser)

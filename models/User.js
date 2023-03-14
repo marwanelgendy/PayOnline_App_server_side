@@ -28,12 +28,6 @@ const userSchema = new Schema({
             type : mongoose.Schema.Types.ObjectId,
             ref : 'bills'
         }
-    ],
-    transfers:[
-        {
-            type: mongoose.Schema.Types.ObjectId,
-            ref : 'transfers'
-        }
     ]
 })
 

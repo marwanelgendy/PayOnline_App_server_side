@@ -3,8 +3,7 @@ const Transfer = require('../models/Transfer')
 
 module.exports = (req , res , next)=>{
     Transfer.create(req.body , (err , transfer) =>{
-
-        console.log(err)
+        
         if(err){
             res.status(400).json({status: 'faild'}).end()
             return
