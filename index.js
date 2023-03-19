@@ -14,6 +14,7 @@ const getTransfer = require('./contoller/getTransfer')
 const addBillOrTransferToUser = require('./contoller/addBillOrTransferToUser')
 const updateBalance = require('./contoller/updateBalance')
 const getUserByName = require('./contoller/getUserByName')
+const payBill = require('./contoller/payBill')
 
 //create app
 const app = express()
@@ -53,6 +54,7 @@ app.get('/getUserByName' , getUserByName)
 // Bill
 app.post('/addBill' , addBill)
 app.get('/getBill/:billId' , getBill)
+app.post('/payBill' , payBill)
 
 // Transfer
 app.post('/addTransfer' , addTransfer)
